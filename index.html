@@ -23,16 +23,23 @@
         constructor() {
           super();
           this.state = {
-            contador: 0,
+            contador: 0
           };
+
+          this.manejadorSuma = this.manejadorSuma.bind(this);
+          this.manejadorResta = this.manejadorResta.bind(this);
         }
 
         manejadorSuma() {
-          console.log("sumar");
+          this.setState({
+            contador: this.state.contador + 1
+          });
         }
-
+        
         manejadorResta() {
-          console.log("restar");
+          this.setState({
+            contador: this.state.contador - 1
+          });
         }
 
         render() {
