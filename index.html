@@ -20,14 +20,29 @@
 
     <script type="text/babel">
       class Contador extends React.Component {
+
+        manejadorSuma() {
+          console.log('sumar');
+        }
+
+        manejadorResta() {
+          console.log('restar');
+        }
+
         render() {
-          return <h1>El componente Contador</h1>;
+          return (
+            <div>
+              <button onClick={this.manejadorResta}>-</button>
+              <span style={{ padding: "10px" }}>9</span>
+              <button onClick={this.manejadorSuma}>+</button>
+            </div>
+          );
         }
       }
 
       class App extends React.Component {
         render() {
-          return <Contador />
+          return <Contador />;
         }
       }
 
