@@ -23,7 +23,7 @@
         constructor() {
           super();
           this.state = {
-            contador: 2
+            contador: 2,
           };
 
           this.manejadorSuma = this.manejadorSuma.bind(this);
@@ -32,23 +32,36 @@
 
         manejadorSuma() {
           this.setState({
-            contador: this.state.contador + 1
+            contador: this.state.contador + 1,
           });
         }
-        
+
         manejadorResta() {
           this.setState({
-            contador: this.state.contador - 1
+            contador: this.state.contador - 1,
           });
         }
 
         render() {
-          console.log('representación');
+          let tipo = "";
+
+          if (this.state.contador % 2 === 0) {
+            tipo = "PAR";
+          } else {
+            tipo = "IMPAR";
+          }
+
           return (
             <div>
-              <button onClick={this.manejadorResta}>-</button>
-              <span style={{ padding: "10px" }}>{this.state.contador}</span>
-              <button onClick={this.manejadorSuma}>+</button>
+              <h6>{this.state.contador % 2 === 0 ? "Par" : "Impar"}</h6>
+
+              <h6>{tipo}</h6>
+
+              <div>
+                <button onClick={this.manejadorResta}>-</button>
+                <span style={{ padding: "10px" }}>{this.state.contador}</span>
+                <button onClick={this.manejadorSuma}>+</button>
+              </div>
             </div>
           );
         }
