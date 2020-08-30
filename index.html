@@ -13,10 +13,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
   <script type="text/babel">
-    // const Header = React.createElement('h1', null, 'Hola Mundo desde React');
     const Header = <h1>Hola Mundo desde React</h1>;
 
-    ReactDOM.render(Header, document.querySelector('#app'));
+    const Reloj = () => {
+      const fecha = new Date();
+      const esteAnio = fecha.getFullYear();
+      return <h1>Esto año es : {esteAnio}</h1>
+    }
+
+    ReactDOM.render(<Reloj />, document.querySelector('#app'));
   </script>
 
 </body>
