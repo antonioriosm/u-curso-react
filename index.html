@@ -23,7 +23,7 @@
         constructor() {
           super();
           this.state = {
-            contador: 0
+            contador: 2
           };
 
           this.manejadorSuma = this.manejadorSuma.bind(this);
@@ -43,6 +43,7 @@
         }
 
         render() {
+          console.log('representación');
           return (
             <div>
               <button onClick={this.manejadorResta}>-</button>
