@@ -20,20 +20,26 @@
 
     <script type="text/babel">
       class Contador extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            contador: 0,
+          };
+        }
 
         manejadorSuma() {
-          console.log('sumar');
+          console.log("sumar");
         }
 
         manejadorResta() {
-          console.log('restar');
+          console.log("restar");
         }
 
         render() {
           return (
             <div>
               <button onClick={this.manejadorResta}>-</button>
-              <span style={{ padding: "10px" }}>9</span>
+              <span style={{ padding: "10px" }}>{this.state.contador}</span>
               <button onClick={this.manejadorSuma}>+</button>
             </div>
           );
