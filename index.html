@@ -19,27 +19,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
     <script type="text/babel">
-      const VerCabecera = () => <h1>ESTA ES LA CABECERA DEL APP</h1>;
+      class Contador extends React.Component {
+        render() {
+          return <h1>El componente Contador</h1>;
+        }
+      }
 
-      const Reloj = (props) => {
-        const fecha = new Date();
-        const esteAnio = fecha.getFullYear();
-
-        return (
-          <h1 style={{ color: props.color, size: props.size }}>
-            Esto año es : {esteAnio}
-          </h1>
-        );
-      };
-
-      const App = () => (
-        <div>
-          <VerCabecera />
-          <Reloj color="#0000ff" />
-          <Reloj color="#00ffff" />
-          <Reloj color="#ff00ff" />
-        </div>
-      );
+      class App extends React.Component {
+        render() {
+          return <Contador />
+        }
+      }
 
       ReactDOM.render(<App />, document.querySelector("#app"));
     </script>
