@@ -4,15 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curso de React</title>
-    <style>
-      .header {
-        color: red;
-        font-size: 25px;
-      }
-    </style>
   </head>
   <body>
     <div id="app"></div>
+    <div id="app1"></div>
+    <div id="app2"></div>
 
     <script
       crossorigin
@@ -25,16 +21,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
     <script type="text/babel">
-      const Header = <h1>Hola Mundo desde React</h1>;
-
-      const Reloj = () => {
+      const Reloj = (props) => {
         const fecha = new Date();
         const esteAnio = fecha.getFullYear();
-        // return <h1 style={{ color: "red", fontSize: '25px' }}>Esto año es : {esteAnio}</h1>;
-        return <h1 className='header'>Esto año es : {esteAnio}</h1>;
+
+        return <h1 style={{color: props.color, size: props.size}}>Esto año es : {esteAnio}</h1>;
       };
 
-      ReactDOM.render(<Reloj />, document.querySelector("#app"));
+      ReactDOM.render(<Reloj color='#0000ff' size="big" />, document.querySelector("#app"));
+
+      ReactDOM.render(<Reloj color='#00ffff' size="big" />, document.querySelector("#app1"));
+
+      ReactDOM.render(<Reloj color='#ff00ff' size="big" />, document.querySelector("#app2"));
+
     </script>
   </body>
 </html>
