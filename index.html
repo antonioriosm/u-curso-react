@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso de React</title>
-</head>
-<body>
-  <div id="app"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso de React</title>
+    <style>
+      .header {
+        color: red;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
 
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
-  <script type="text/babel">
-    const Header = <h1>Hola Mundo desde React</h1>;
+    <script type="text/babel">
+      const Header = <h1>Hola Mundo desde React</h1>;
 
-    const Reloj = () => {
-      const fecha = new Date();
-      const esteAnio = fecha.getFullYear();
-      return <h1>Esto año es : {esteAnio}</h1>
-    }
+      const Reloj = () => {
+        const fecha = new Date();
+        const esteAnio = fecha.getFullYear();
+        // return <h1 style={{ color: "red", fontSize: '25px' }}>Esto año es : {esteAnio}</h1>;
+        return <h1 className='header'>Esto año es : {esteAnio}</h1>;
+      };
 
-    ReactDOM.render(<Reloj />, document.querySelector('#app'));
-  </script>
-
-</body>
+      ReactDOM.render(<Reloj />, document.querySelector("#app"));
+    </script>
+  </body>
 </html>
